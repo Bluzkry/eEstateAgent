@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.0.8.js"></script>
-    <meta charset="UTF-8">
-    <title>Simple Chat</title>
-    <link rel="stylesheet" href="layout.css"/>
-
+    <title>Simon Chatbot</title>
     <style type="text/css">
         body {
             font-size: 250%;
@@ -19,6 +15,9 @@
             display: flex;
             -webkit-flex-direction: column;
             flex-direction: column;
+        }
+        :focus {
+            outline: none;
         }
         .hbox {
             display: -webkit-flex;
@@ -37,9 +36,22 @@
         .scroll {
             overflow-y: scroll;
         }
+
+        textarea { height: 30em; }
+        .debug { border: 1px solid red; }
+        #history {
+            border: 0px solid green;
+            padding: 0.2em;
+            padding-left: 1em;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            width: 100%;
+            border-left: 3px solid red;
+        }
         input, button {
             font-size: inherit;
         }
+
         button, input {
             border: 3px solid black;
             background-color: white;
@@ -62,6 +74,7 @@
         .wrapper {
             padding: 1em 1em 1em 1em;
         }
+
         #history p {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             padding-bottom: 0.5em;
@@ -73,27 +86,39 @@
             border-width: 0 0 0px 0;
         }
 
-
+        .bot {
+            text-transform: lowercase;
+        }
+        .bot b {
+            color: red;
+        }
+        .bot a {
+            color: red;
+            font-weight: bold;
+        }
+        .user {
+            color: #d0d0d0;
+        }
+        .giphy {
+            float: right;
+        }
     </style>
-</head>
 <body>
-
 <div class="fill vbox wrapper">
-    <h1>Simon Chatbot</h1>
-    <div id="history" class="grow"></div>
-    <div class='hbox'>
-      <input id="message" class="grow"/>
+  <h1>Simon Chatbot</h1>
+  <div class='hbox grow' id="history-wrapper">
+  </div>
+  <div class='hbox'>
+      <input id='message' class='grow'/>
       <button id='send'>Send</button>
-    </div>
+  </div>
     <!-- <div class="hbox">
         <button id="Price">Price</button>
         <button id="Loans">Loans</button>
         <button id="Schedule">Schedule</button>
         <button id="Help">Help</button>
     </div> -->
-  </div>
 </div>
-
 <script type="text/javascript">
     // a simple JQuery like function to get elements by ID
     function $(id) { return document.getElementById(id);  }
@@ -127,23 +152,6 @@
         }
     });
     $('message').focus();
-
-    // $('Price').addEventListener('Price',function() {
-    //     $('message').value = 'What is the price?';
-    //     $('message').focus();
-    // })
-    // $('Loans').addEventListener('Loans',function() {
-    //     $('message').value = 'Can I get a loan?';
-    //     $('message').focus();
-    // })
-    // $('Schedule').addEventListener('Schedule',function() {
-    //     $('message').value = 'Can I schedule an appointment?';
-    //     $('message').focus();
-    // })
-    // $('Help').addEventListener('Help',function() {
-    //     $('message').value = 'Who are you?';
-    //     $('message').focus();
-    // })
 </script>
 </body>
 </html>
