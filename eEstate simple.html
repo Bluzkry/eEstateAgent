@@ -8,8 +8,8 @@
 
     <style type="text/css">
         body {
-            font-size: 250%;
-            background-color: gray;
+            font-size: 100%;
+            background-color: black;
             color: blue;
             margin:0;
             padding: 0;
@@ -33,9 +33,9 @@
             top:0;
             bottom:0;
         }
-        .grow {  flex: 1;   }
-        .scroll {
-            overflow-y: scroll;
+        .grow {
+          flex: 1;
+          overflow-y: scroll
         }
         input, button {
             font-size: inherit;
@@ -73,7 +73,6 @@
             border-width: 0 0 0px 0;
         }
 
-
     </style>
 </head>
 <body>
@@ -81,17 +80,17 @@
 <div class="fill vbox wrapper">
     <h1>Simon Chatbot</h1>
     <div id="history" class="grow"></div>
-    <div class='hbox'>
-      <input id="message" class="grow"/>
-      <button id='send'>Send</button>
+      <div class='hbox'>
+        <input id="message" class="grow"/>
+        <button id='send'>Send</button>
+      </div>
     </div>
-    <!-- <div class="hbox">
-        <button id="Price">Price</button>
+    <div class="hbox">
+        <!--<button id="Price">Price</button>
         <button id="Loans">Loans</button>
         <button id="Schedule">Schedule</button>
-        <button id="Help">Help</button>
-    </div> -->
-  </div>
+        <button id="Help">Help</button>-->
+    </div>
 </div>
 
 <script type="text/javascript">

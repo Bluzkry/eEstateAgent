@@ -10,7 +10,7 @@ function process(request) {
     */
     let watsonUsername = 'a321cc37-c047-44ea-8a9e-88559b9e53b7';
     let watsonPassword = 'WQqvMfgoz5Ja';
-    let workspaceId = 'f7f30228-088f-42b2-9b48-614408a8c4e8';
+    let workspaceId = '1d1f2b27-7d3f-4025-bebe-431aefe1edc9';
     let senderName = 'PubNub Bot';
     /*
       TODO: end fill values
